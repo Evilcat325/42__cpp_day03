@@ -30,11 +30,13 @@ FragTrap::FragTrap(FragTrap const &rhs) : max_hit_points(100U),
 										  melee_atkdmg(30U), ranged_atkdmg(20U),
 										  armor_dmg_deduction(5U)
 {
+	std::cout << "copying fragtrap" << std::endl;
 	*this = rhs;
 }
 
 FragTrap &FragTrap::operator=(FragTrap const &rhs)
 {
+	std::cout << "assigning fragtrap" << std::endl;
 	this->name = rhs.name;
 	this->hit_points = rhs.hit_points;
 	this->energy_points = rhs.energy_points;
@@ -135,7 +137,7 @@ void FragTrap::vaulthunter_dot_exe(std::string const &target)
 		&FragTrap::divisionByZeroAttack,
 		&FragTrap::theSnapAttack};
 	std::cout
-		<< "FR4G-TP " << name << " initiate random attack at" << target << std::endl;
+		<< "FR4G-TP " << name << " initiate random attack at " << target << std::endl;
 	if (energy_points < 25U)
 		std::cout << " No enough energy please charge " << std::endl;
 	else

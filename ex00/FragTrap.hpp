@@ -17,11 +17,11 @@ class FragTrap
 	const unsigned int melee_atkdmg;
 	const unsigned int ranged_atkdmg;
 	const unsigned int armor_dmg_deduction;
+	FragTrap();
 
   public:
-	FragTrap(std::string name);
-	FragTrap();
 	~FragTrap();
+	FragTrap(std::string name);
 	FragTrap(FragTrap const &rhs);
 	FragTrap &operator=(FragTrap const &rhs);
 	void rangedAttack(std::string const &target);

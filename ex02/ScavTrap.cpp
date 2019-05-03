@@ -1,20 +1,40 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name) : FragTrap(100U, 50U, 20U, 15U, 3U)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(100U, 50U, 20U, 15U, 3U)
 {
 	this->name = name;
 	this->type = "ScavTrap";
 	this->hit_points = 100;
 	this->energy_points = 50;
 	this->level = 1;
+	std::cout << type << " " << name << " initizaling..." << std::endl;
+}
+
+ScavTrap::ScavTrap() : ClapTrap(100U, 50U, 20U, 15U, 3U)
+{
+	std::cout << "notype nonamed initizaling..." << std::endl;
 }
 
 ScavTrap::~ScavTrap()
 {
+	std::cout << type << " " << name << " deconstructing..." << std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &rhs) : FragTrap(rhs)
+ScavTrap::ScavTrap(ScavTrap const &rhs) : ClapTrap(100U, 50U, 20U, 15U, 3U)
 {
+	std::cout << "copying " << rhs.type << std::endl;
+	*this = rhs;
+}
+
+ScavTrap &ScavTrap::operator=(ScavTrap const &rhs)
+{
+	std::cout << "assigning " << rhs.type << std::endl;
+	this->name = rhs.name;
+	this->type = rhs.type;
+	this->hit_points = rhs.hit_points;
+	this->energy_points = rhs.energy_points;
+	this->level = rhs.level;
+	return *this;
 }
 
 void ScavTrap::challengeMeaningOfLife()

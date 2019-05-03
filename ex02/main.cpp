@@ -1,7 +1,9 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+#include "ClapTrap.hpp"
 
-void test(ScavTrap &subject)
+void test_basic(ClapTrap &subject)
 {
 	subject.takeDamage(50);
 	subject.beRepaired(60);
@@ -9,25 +11,29 @@ void test(ScavTrap &subject)
 	subject.beRepaired(150);
 	subject.meleeAttack("CPP");
 	subject.rangedAttack("Makefile");
-	subject.vaulthunter_dot_exe("PDF");
-	subject.vaulthunter_dot_exe("PDF");
 	subject.charge(2000);
-	subject.vaulthunter_dot_exe("PDF");
-	subject.vaulthunter_dot_exe("PDF");
+}
+void test(ScavTrap &subject)
+{
+	test_basic(subject);
+	for (int i = 0; i < 5; ++i)
+		subject.challengeNewcomer();
+}
+void test(FragTrap &subject)
+{
+	test_basic(subject);
+	for (int i = 0; i < 5; ++i)
+		subject.vaulthunter_dot_exe("PDF");
 	subject.charge(2000);
-	subject.challengeNewcomer();
-	subject.challengeNewcomer();
-	subject.challengeNewcomer();
+	for (int i = 0; i < 5; ++i)
+		subject.vaulthunter_dot_exe("PDF");
 }
 int main()
 {
-	ScavTrap ft("marvel");
+	ScavTrap st("marvel");
+	FragTrap ft("levram");
 	std::srand(std::time(nullptr));
 	test(ft);
-	// FragTrap ft2 = ft;
-	// ft2.charge(200);
-	// ft2.vaulthunter_dot_exe("INTRA");
-	// test(ft2);
-
+	test(st);
 	return 0;
 }

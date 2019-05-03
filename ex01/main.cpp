@@ -1,7 +1,7 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-void test(FragTrap &subject)
+void test(ScavTrap &subject)
 {
 	subject.takeDamage(50);
 	subject.beRepaired(60);
@@ -20,15 +20,12 @@ void test(FragTrap &subject)
 	subject.vaulthunter_dot_exe("PDF");
 	subject.vaulthunter_dot_exe("PDF");
 	subject.charge(2000);
-	subject.vaulthunter_dot_exe("PDF");
-	subject.vaulthunter_dot_exe("PDF");
-	subject.vaulthunter_dot_exe("PDF");
-	subject.vaulthunter_dot_exe("PDF");
-	subject.charge(2000);
-	subject.vaulthunter_dot_exe("PDF");
-	subject.vaulthunter_dot_exe("PDF");
-	subject.vaulthunter_dot_exe("PDF");
-	subject.vaulthunter_dot_exe("PDF");
+	subject.challengeNewcomer();
+	subject.challengeNewcomer();
+	subject.challengeNewcomer();
+	subject.challengeNewcomer();
+	subject.challengeNewcomer();
+	subject.challengeNewcomer();
 }
 int main()
 {

@@ -2,6 +2,7 @@
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
 #include "NinjaTrap.hpp"
+#include "SuperTrap.hpp"
 #include <iostream>
 
 void test_basic(ClapTrap &subject)
@@ -49,5 +50,7 @@ int main()
 	test(ft);
 	test(st);
 	test(nt, st, ft, ct);
+	SuperTrap supert;
+	supert.FragTrap::charge(100);
 	return 0;
 }

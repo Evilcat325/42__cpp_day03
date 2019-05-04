@@ -6,12 +6,12 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
-class NinjaTrap : public ClapTrap
+class NinjaTrap : virtual public ClapTrap
 {
-  private:
+private:
 	NinjaTrap();
 
-  public:
+public:
 	NinjaTrap(std::string iname);
 	~NinjaTrap();
 	NinjaTrap(NinjaTrap const &rhs);

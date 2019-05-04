@@ -6,12 +6,12 @@
 #include <cstdlib>
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
-private:
+  private:
 	FragTrap();
 
-public:
+  public:
 	~FragTrap();
 	FragTrap(std::string name);
 	FragTrap(FragTrap const &rhs);
